@@ -1,0 +1,32 @@
+# Node & Runtime
+node_modules/
+*.log
+live_payload.json
+
+# Scratch dumps & JS bundles
+*.html
+index.d8abd373cf34f58f.js
+widget_combined.js
+*.css
+styles.d4c2b34587b4c07e.js
+chunks.json
+widget_chunks_to_fetch.json
+[0-9a-f]*.js
+
+# Analysis & Reverse-engineering scripts
+analyze.js
+check_*.js
+deep_analyze.js
+download_*.js
+find_*.js
+generate_*.js
+get_*.js
+inspect_*.js
+parse_chunks.js
+print_*.js
+resolve_*.js
+sample_widget_payload.json
+hivyt_*.json
+hive_*.json
+upscale_textures.ps1
+hive_icons/

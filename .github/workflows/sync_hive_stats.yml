@@ -1,0 +1,26 @@
+name: Sync Hive Bedwars to Discord Widget
+
+on:
+  schedule:
+    # Runs every 5 minutes (GitHub's minimum cron interval)
+    - cron: '*/5 * * * *'
+  # Allows you to trigger the sync manually anytime from the GitHub UI
+  workflow_dispatch:
+
+jobs:
+  sync-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Hive Bedwars Synchronizer
+        env:
+          DISCORD_AUTH_TOKEN: ${{ secrets.DISCORD_AUTH_TOKEN }}
+        run: node sync.js
