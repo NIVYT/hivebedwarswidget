@@ -18,9 +18,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Run Hive Bedwars Synchronizer
         env:
           DISCORD_AUTH_TOKEN: ${{ secrets.DISCORD_AUTH_TOKEN }}
         run: node sync.js
+
