@@ -119,9 +119,9 @@ async function syncOnce() {
     if (comps.stat_6?.fields?.value) comps.stat_6.fields.value.value = `${stats.played.toLocaleString()} Games`;
   }
 
-  // Also update widget top subtitle if exists
-  if (surfaces.widget_top?.components?.subtitle_2?.fields?.text) {
-    surfaces.widget_top.components.subtitle_2.fields.text.value = `${stats.beds_destroyed.toLocaleString()} Beds Destroyed 🛏️`;
+  // Remove duplicate subtitle_2 so top section stays clean with title and subtitle_1
+  if (surfaces.widget_top?.components?.subtitle_2) {
+    delete surfaces.widget_top.components.subtitle_2;
   }
 
   const payload = {
